@@ -1,0 +1,13 @@
+.mydirs <- function(key){
+
+  # Create a hashmap
+  dirs <- hash::hash()
+
+  # Sets preferred directories
+  dirs['home'] <- file.path('C', 'Users', Sys.getenv('username'))
+  
+  # Query the location of the above given the input
+  value <- dirs[[key]]
+  return(value)
+  
+}
