@@ -1,0 +1,5 @@
+.jump <- function(location){
+  # Jump does a setwd() on one of .mydirs()
+  dirs <- .mydirs()
+  setwd(dirs[[location]])
+}
