@@ -1,0 +1,13 @@
+.add <- function(location='.'){
+  # Sources all functions in a folder
+  cwd <- getwd()
+  thisdir_names <- c('.', 'cwd', 'pwd')
+  if (location %in% thisdir_names){
+    function_dir <- cwd
+  } else if (':' %in% location) {
+    function_dir <- location
+  } else {
+    function_dir <- paste0(cwd, '/', location)
+  }
+  invisible(sapply(file.path(function_dir, list.files(function_dir, pattern = '*.R')), source))
+}
